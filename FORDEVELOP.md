@@ -83,29 +83,25 @@ WIP
 * バージョン番号が設定されるリリースにて develop ブランチを再度検証した上で、master ブランチにマージする。
 
 #### コーディング規約
-* Kotlinのコーディング規約
-https://kotlinlang.org/docs/reference/coding-conventions.html
-* ncmb_kotlinの規約
-https://kotlinlang.org/docs/reference/coding-conventions.html#naming-rules
+
+* Dartのコーディング規約
+https://dart.dev/effective-dart/style
+* ncmb-dartの開発ルール
+https://dart.dev/effective-dart/usage
+
 #### ドキュメント
+
 以下のようにコメントする際に、フォーマットに従い、コメントを行ってください。
-https://kotlinlang.org/docs/reference/kotlin-doc.html
+参考：https://dart.dev/effective-dart/documentation
 ```
-/**
- * A group of *members*.
- *
- * This class has no useful logic; it's just a documentation example.
- *
- * @param T the type of a member in this group.
- * @property name the name of this group.
- * @constructor Creates an empty group.
- */
-class Group<T>(val name: String) {
-    /**
-     * Adds a [member] to this group.
-     * @return the new size of the group.
-     */
-    fun add(member: T): Int { ... }
+/// クラスの説明
+///
+class ClassName {
+    /// メソッドの説明
+    /// [var1] パラメーターの説明
+    /// [var2] パラメーターの説明
+    void functionName (Type var1, Type var2) 
+    { ... }
 }
 ```
 
