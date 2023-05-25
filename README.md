@@ -45,6 +45,7 @@ NCMB('YOUR_APPLICATION_KEY', 'YOUR_CLIENT_KEY');
 
 # ライセンス
 
+こちらのSDKは[ncmb-dart](https://github.com/NCMBMania/ncmb-dart)からForkし、開発されました。
 このSDKのライセンスは Apache License Version 2.0 に従います。
 
 # 参考URL集
