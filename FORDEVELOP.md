@@ -92,15 +92,19 @@ https://dart.dev/effective-dart/usage
 #### ドキュメント
 
 以下のようにコメントする際に、フォーマットに従い、コメントを行ってください。
-参考：https://dart.dev/effective-dart/documentation
+- 参考：https://dart.dev/effective-dart/documentation
+markdownを利用可能のため、以下を参照し、必要に応じて、サンプルコードなどを追記してください
+- 参考：https://dart.dev/effective-dart/documentation#markdown
+
 ```
-/// クラスの説明
+/// クラスの説明、役割
 ///
 class ClassName {
     /// メソッドの説明
-    /// [var1] パラメーターの説明
-    /// [var2] パラメーターの説明
-    void functionName (Type var1, Type var2) 
+    /// * [var1] パラメーターの説明
+    /// * [var2] パラメーターの説明
+    /// * 戻り値の説明（あれば）
+    Type functionName (Type var1, Type var2)
     { ... }
 }
 ```
