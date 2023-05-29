@@ -14,7 +14,7 @@
 
 といった機能をアプリから利用することが可能です。
 
-このSDKを利用する前に、ニフクラ mobile backendのアカウントを作成する必要があります。 ニフクラ mobile backendのサービスサイトからアカウント登録を行ってください。
+このSDKを利用する前に、ニフクラ mobile backendのアカウントを作成する必要があります。 [ニフクラ mobile backendのサービスサイト](https://mbaas.nifcloud.com/)からアカウント登録を行ってください。
 
 # 動作環境
 
