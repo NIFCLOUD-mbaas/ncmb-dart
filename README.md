@@ -36,8 +36,10 @@
 
 # インストール
 
+```dart
 import 'package:ncmb/ncmb.dart';
 NCMB('YOUR_APPLICATION_KEY', 'YOUR_CLIENT_KEY');
+```
 
 # 使用例
 
