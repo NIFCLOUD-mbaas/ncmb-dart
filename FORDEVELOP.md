@@ -63,7 +63,7 @@ WIP
 
 WIP
 
-##### Kotlin SDKのテスト構成
+##### Flutter SDKのテスト構成
 
 WIP
 
