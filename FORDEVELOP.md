@@ -92,9 +92,10 @@ https://dart.dev/effective-dart/usage
 #### ドキュメント
 
 以下の例のように、フォーマットに従ってコメントしてください。
-- 参考：https://dart.dev/effective-dart/documentation
-markdownを利用可能のため、以下を参照し、必要に応じて、サンプルコードなどを追記してください
-- 参考：https://dart.dev/effective-dart/documentation#markdown
+- ドキュメントのフォーマットは以下に従います
+  ‐ https://dart.dev/effective-dart/documentation  
+‐ markdownを使うことができます。必要に応じてサンプルコードなどを追記してください
+  - 参考：https://dart.dev/effective-dart/documentation#markdown
 
 ```
 /// クラスの説明、役割
