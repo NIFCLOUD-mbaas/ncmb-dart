@@ -101,12 +101,22 @@ markdownを利用可能のため、以下を参照し、必要に応じて、サ
 ///
 class ClassName {
     /// メソッドの説明
-    /// * [var1] パラメーターの説明
-    /// * [var2] パラメーターの説明
-    /// * 戻り値の説明（あれば）
+    ///
+    /// [var1] [var2] 例外や戻り値の説明文章
+    ///
     Type functionName (Type var1, Type var2)
     { ... }
 }
+```
+
+* 記載例（[参考](https://dart.dev/effective-dart/documentation#do-use-prose-to-explain-parameters-return-values-and-exceptions)）
+
+```
+/// Defines a flag.
+///
+/// Throws an [ArgumentError] if there is already an option named [name] or
+/// there is already an option using abbreviation [abbr]. Returns the new flag.
+Flag addFlag(String name, String abbr) => ...
 ```
 
 
