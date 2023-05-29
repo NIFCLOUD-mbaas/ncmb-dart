@@ -36,8 +36,7 @@ WIP
 ### 2. 環境について
 #### 動作保証環境
 
-Android 8.x ~ Android 11.x
-iOS
+参照：[README](./README.md#動作環境)
 
 #### ビルドの環境
 
