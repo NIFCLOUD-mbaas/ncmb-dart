@@ -39,7 +39,7 @@
 import 'package:ncmb/ncmb.dart';
 NCMB('YOUR_APPLICATION_KEY', 'YOUR_CLIENT_KEY');
 
-# サンプル
+# 使用例
 
 [example.md](./example/readme.md)をご確認ください。
 
