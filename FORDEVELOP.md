@@ -78,7 +78,7 @@ WIP
 ### 4. 開発について
 
 #### 開発フロー
-* バグ修正、新機能開発での開発フローは Github フローを用いる。
+* バグ修正、新機能開発での開発フローは [Github フロー](https://docs.github.com/ja/get-started/quickstart/github-flow)を用いる。
 * 各開発、改修は develop ブランチ へ向けたプルリクエストにて行う。
 * バージョン番号が設定されるリリースにて develop ブランチを再度検証した上で、master ブランチにマージする。
 
