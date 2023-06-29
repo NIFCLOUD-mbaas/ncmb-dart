@@ -21,7 +21,7 @@ class NCMBObject extends NCMBBase{
   /// フィールドデータを取得する
   /// 取得したデータは自分自身にセットする
   Future<void> fetch() async {
-    if (fields.containsKey('objectId')) {
+    if (!fields.containsKey('objectId')) {
       throw Exception('ObjectId is required.');
     }
     NCMBRequest r = new NCMBRequest();

@@ -17,7 +17,7 @@ class NCMBBase {
   /// クラス名
   String _name = '';
   String get name => _name;
-
+  
   /// オブジェクトID
   String? objectId;
 
