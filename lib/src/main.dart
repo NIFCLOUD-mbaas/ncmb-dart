@@ -1,3 +1,4 @@
+import 'base.dart';
 import 'object.dart';
 import 'request.dart';
 import 'user.dart';

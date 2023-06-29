@@ -4,7 +4,6 @@ import 'dart:typed_data';
 import 'package:dio/dio.dart';
 import 'main.dart';
 import 'query.dart';
-import 'relation.dart';
 import 'geopoint.dart';
 import 'acl.dart';
 import 'signature.dart';
@@ -117,9 +116,6 @@ class NCMBRequest {
         fields[k] = {'__type': 'Date', 'iso': v.toUtc().toIso8601String()};
       }
       if (v is NCMBAcl) {
-        fields[k] = v.toJson();
-      }
-      if (v is NCMBRelation) {
         fields[k] = v.toJson();
       }
       if (v is NCMBQuery) {

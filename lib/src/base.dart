@@ -5,21 +5,31 @@ import 'acl.dart';
 import 'request.dart';
 import 'geopoint.dart';
 import 'package:intl/intl.dart';
-import 'relation.dart';
 import 'user.dart';
-import 'push.dart';
-import 'installation.dart';
+import 'object.dart';
 
 /// データストアのオブジェクトを扱うクラス
 class NCMBBase {
   /// フィールドデータ
-  Map _fields = {};
+  Map<String, dynamic> _fields = {};
+  Map<String, dynamic> get fields => _fields;
 
-  /// アクセサメソッド。クラス名を返す
-  get name => _name;
+  /// クラス名
+  String _name = '';
+  String get name => _name;
 
-  /// アクセサメソッド。フィールドデータを返す
-  get fields => _fields;
+  /// オブジェクトID
+  String? objectId;
+
+  /// コンストラクター
+  /// [name] クラス名
+  /// [fields] フィールドデータ。省略時は空のMap
+  NCMBBase(name, Map fields) {
+    _name = name;
+    fields.forEach((key, value) {
+      _fields[key] = fields[key];
+    });
+  }
 
   /// フィールドデータをセットする
   /// [name] フィールド名
@@ -62,16 +72,6 @@ class NCMBBase {
             var user = NCMBUser();
             user.sets(map);
             value = user;
-            break;
-          case 'installation':
-            var installation = NCMBInstallation();
-            installation.sets(map);
-            value = installation;
-            break;
-          case 'push':
-            var push = NCMBPush();
-            push.sets(map);
-            value = push;
             break;
           default:
             NCMBObject obj = NCMBObject(className);
@@ -193,8 +193,7 @@ class NCMBBase {
     }
     if (item is NCMBAcl ||
         item is NCMBGeoPoint ||
-        item is NCMBObject ||
-        item is NCMBRelation) {
+        item is NCMBObject) {
       return item.toJson();
     }
     return item;
