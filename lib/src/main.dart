@@ -15,16 +15,45 @@ class NCMB {
   /// セッショントークン
   String? sessionToken;
 
+  /// ドメイン
+  String? domainUrl;
+
+  ///APIバージョン
+  String? apiVersion;
+
   /// バージョン
-  String version = '2.6.6';
+  final String sdkVersion = '0.1.0';
+
+  /// SDK 名前
+  final String sdkName = 'Dart';
+
+  ///API URL
+  static const  String  defaultDomainURL = "https://mbaas.api.nifcloud.com/";
+
+  ///API version
+  static const String  defaultAPIVersion = "2013-09-01";
+
+  /// FQDN
+  static const String  fqdn = 'mbaas.api.nifcloud.com';
+
+  /// スクリプト用FQDN
+  static const  String scriptFqdn = 'script.mbaas.api.nifcloud.com';
+
+  /// APIバージョン
+  static const String version = '2013-09-01';
+
+  /// スクリプトAPIバージョン
+  static const  String scriptVersion = '2015-09-01';
 
   /// NCMBクラスのコンストラクタ
   /// アプリケーションキー、クライアントキーを指定して初期化します
   /// [applicationKey] アプリケーションキー
   /// [clientKey] クライアントキー
-  NCMB(String applicationKey, String clientKey) {
+  NCMB(String applicationKey, String clientKey, {String domainUrl = defaultDomainURL, String apiVersion = defaultAPIVersion}) {
     this.applicationKey = applicationKey;
     this.clientKey = clientKey;
+    this.domainUrl = domainUrl;
+    this.apiVersion = apiVersion;
     NCMBUser.ncmb = this;
     NCMBObject.ncmb = this;
     NCMBRequest.ncmb = this;

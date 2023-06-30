@@ -94,6 +94,10 @@ class NCMBRequest {
       headers['X-NCMB-Apps-Session-Token'] = sessionToken;
     }
     try {
+      //REQUEST CHECK
+      //print(url + "|" + method + "|");
+      //for (var e in newFields.entries)   print("${e.key}\n${e.value}");
+
       var response = await req(url, method, newFields, headers,
           multipart: multipart, fileName: objectId);
       if (response.data is Uint8List) {
