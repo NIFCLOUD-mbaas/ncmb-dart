@@ -4,7 +4,6 @@ import 'dart:typed_data';
 import 'package:dio/dio.dart';
 import 'main.dart';
 import 'query.dart';
-import 'relation.dart';
 import 'geopoint.dart';
 import 'acl.dart';
 import 'signature.dart';
@@ -95,6 +94,10 @@ class NCMBRequest {
       headers['X-NCMB-Apps-Session-Token'] = sessionToken;
     }
     try {
+      //REQUEST CHECK
+      //print(url + "|" + method + "|");
+      //for (var e in newFields.entries)   print("${e.key}\n${e.value}");
+
       var response = await req(url, method, newFields, headers,
           multipart: multipart, fileName: objectId);
       if (response.data is Uint8List) {
@@ -117,9 +120,6 @@ class NCMBRequest {
         fields[k] = {'__type': 'Date', 'iso': v.toUtc().toIso8601String()};
       }
       if (v is NCMBAcl) {
-        fields[k] = v.toJson();
-      }
-      if (v is NCMBRelation) {
         fields[k] = v.toJson();
       }
       if (v is NCMBQuery) {

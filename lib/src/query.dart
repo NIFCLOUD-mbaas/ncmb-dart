@@ -1,12 +1,8 @@
 import 'dart:async';
 
 import 'main.dart';
-import 'push.dart';
-import 'file.dart';
 import 'user.dart';
-import 'role.dart';
 import 'object.dart';
-import 'installation.dart';
 import 'request.dart';
 import 'geopoint.dart';
 
@@ -57,20 +53,8 @@ class NCMBQuery {
       ary.forEach((item) {
         var obj;
         switch (_name) {
-          case 'files':
-            obj = new NCMBFile();
-            break;
           case 'users':
             obj = new NCMBUser();
-            break;
-          case 'roles':
-            obj = new NCMBRole(item['roleName']);
-            break;
-          case 'installations':
-            obj = new NCMBInstallation();
-            break;
-          case 'push':
-            obj = new NCMBPush();
             break;
           default:
             obj = new NCMBObject(_name);
@@ -234,10 +218,6 @@ class NCMBQuery {
     var className;
     if (obj is NCMBUser) {
       className = 'user';
-    } else if (obj is NCMBRole) {
-      className = 'role';
-    } else if (obj is NCMBInstallation) {
-      className = 'installation';
     } else {
       className = obj.name;
     }

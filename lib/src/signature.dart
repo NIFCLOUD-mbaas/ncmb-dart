@@ -7,23 +7,11 @@ class Signature {
   /// NCMBオブジェクト
   NCMB? _ncmb;
 
-  /// FQDN
-  final String _fqdn = 'mbaas.api.nifcloud.com';
-
-  /// スクリプト用FQDN
-  final String _scriptFqdn = 'script.mbaas.api.nifcloud.com';
-
   /// 署名用メソッド
   final String _signatureMethod = 'HmacSHA256';
 
   /// 署名のバージョン
   final String _signatureVersion = '2';
-
-  /// APIバージョン
-  final String _version = '2013-09-01';
-
-  /// スクリプトAPIバージョン
-  final String _scriptVersion = '2015-09-01';
 
   /// スクリプトかどうかのフラグ
   bool _isScript = false;
@@ -52,10 +40,11 @@ class Signature {
   /// [objectId] オブジェクトID。省略時は空文字。
   /// [definePath] あらかじめ決まっているパス。省略時は空文字。
   String path(className, {objectId = '', definePath = ''}) {
+    String _scriptVersion = NCMB.scriptVersion;
     if (_isScript) {
       return '/$_scriptVersion/script/$className';
     }
-    String path = "/$_version";
+    String path = "/"+NCMB.version;
     if (definePath != '') {
       return "$path/$definePath";
     }
@@ -92,7 +81,7 @@ class Signature {
 
   /// FQDNを返す
   String fqdn() {
-    return _isScript ? _scriptFqdn : _fqdn;
+    return _isScript ? NCMB.scriptFqdn : NCMB.fqdn;
   }
 
   /// 署名を生成する
