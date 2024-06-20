@@ -29,6 +29,5 @@ doc/api/
 .flutter-plugins-dependencies
 
 # Others
-example/keys.json
 .packages
 .DS_Store
